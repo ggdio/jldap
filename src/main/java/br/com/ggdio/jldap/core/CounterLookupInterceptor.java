@@ -1,4 +1,4 @@
-package br.com.ggdio.ldap.core;
+package br.com.ggdio.jldap.core;
 
 import org.apache.directory.api.ldap.model.entry.Entry;
 import org.apache.directory.api.ldap.model.exception.LdapException;

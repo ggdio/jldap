@@ -1,4 +1,4 @@
-package br.com.ggdio.ldap;
+package br.com.ggdio.jldap;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ public class Args {
     public static final String ADDRESS = "0.0.0.0";
     public static final int PORT = 10389;
 
-    @Parameter(names = { "--ldfi-files", "-ldfi" }, description = "LDIF files to import")
+    @Parameter(description = "LDIF files to import")
     private List<String> ldifFiles = new ArrayList<String>();
 
     @Parameter(names = { "--help", "-h" }, description = "shows help menu", help = true)

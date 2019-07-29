@@ -1,4 +1,4 @@
-package br.com.ggdio.ldap.core;
+package br.com.ggdio.jldap.core;
 
 import java.io.File;
 import java.io.IOException;

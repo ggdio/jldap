@@ -1,4 +1,4 @@
-package br.com.ggdio.ldap;
+package br.com.ggdio.jldap;
 
 import com.beust.jcommander.JCommander;
 

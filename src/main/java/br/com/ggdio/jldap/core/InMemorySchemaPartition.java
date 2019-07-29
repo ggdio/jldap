@@ -1,4 +1,4 @@
-package br.com.ggdio.ldap.core;
+package br.com.ggdio.jldap.core;
 
 import java.net.URL;
 import java.util.Map;

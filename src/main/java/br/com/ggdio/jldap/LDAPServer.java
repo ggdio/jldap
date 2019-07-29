@@ -18,7 +18,7 @@
  *
  */
 
-package br.com.ggdio.ldap;
+package br.com.ggdio.jldap;
 
 import java.util.List;
 
@@ -32,7 +32,7 @@ import org.apache.directory.server.core.api.DirectoryService;
 import org.apache.directory.server.core.partition.impl.avl.AvlPartition;
 import org.apache.directory.server.protocol.shared.transport.TcpTransport;
 
-import br.com.ggdio.ldap.core.InMemoryDirectoryServiceFactory;
+import br.com.ggdio.jldap.core.InMemoryDirectoryServiceFactory;
 
 public class LDAPServer {
 
