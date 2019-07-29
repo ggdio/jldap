@@ -1,0 +1,40 @@
+version: 1
+
+dn: dc=ggdio,dc=com,dc=br
+dc: ggdio
+objectClass: top
+objectClass: domain
+
+dn: ou=Users,dc=ggdio,dc=com,dc=br
+objectClass: organizationalUnit
+objectClass: top
+ou: Users
+
+dn: uid=dio,ou=Users,dc=ggdio,dc=com,dc=br
+objectClass: top
+objectClass: person
+objectClass: inetOrgPerson
+cn: Guilherme Dio
+sn: dio
+uid: dio
+userPassword: dioxpto
+
+dn: uid=foo,ou=Users,dc=ggdio,dc=com,dc=br
+objectClass: top
+objectClass: person
+objectClass: inetOrgPerson
+cn: Foo Bar
+sn: bar
+uid: foo
+userPassword: foobar
+
+dn: ou=Roles,dc=ggdio,dc=com,dc=br
+objectclass: top
+objectclass: organizationalUnit
+ou: Roles
+
+dn: cn=Admin,ou=Roles,dc=ggdio,dc=com,dc=br
+objectClass: top
+objectClass: groupOfNames
+cn: Admin
+member: uid=dio,ou=Users,dc=ggdio,dc=com,dc=br
