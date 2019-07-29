@@ -1,2 +1,2 @@
-# jldap
+# JLDAP
 JLDAP :: Embeddable Java LDAP Server
