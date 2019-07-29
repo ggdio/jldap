@@ -1,7 +1,7 @@
 # JLDAP
 JLDAP :: Embeddable Java LDAP Server
 
-Java mbeddable LDAP server based on [ApacheDS](http://directory.apache.org/apacheds/).
+Java embeddable LDAP server based on [ApacheDS](http://directory.apache.org/apacheds/).
 
 Data are in-memory based, so the server dont persist it.
 
