@@ -18,7 +18,7 @@
 	</properties>
 
 	<build>
-		<finalName>ldap-server</finalName>
+		<finalName>jldap</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
