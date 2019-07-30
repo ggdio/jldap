@@ -10,24 +10,18 @@ import javax.naming.directory.SearchResult;
 import javax.naming.ldap.InitialLdapContext;
 import javax.naming.ldap.LdapContext;
 
-public class AuthenticateWithSearch {
+public class AuthAndSearch {
 
-    /**
-     * The main.
-     * 
-     * @param args
-     * @throws NamingException
-     */
     public static void main(String[] args) {
         if (args == null || args.length != 3) {
             System.err.println("Simple LDAP authenticator");
             System.err.println();
             System.err.println("Usage:");
-            System.err.println("\tjava " + AuthenticateWithSearch.class.getName() + " <ldapURL> <username> <password>");
+            System.err.println("\tjava " + AuthAndSearch.class.getName() + " <ldapURL> <username> <password>");
             System.err.println();
             System.err.println("Example:");
-            System.err.println("\tjava -cp ldap-server.jar " + AuthenticateWithSearch.class.getName()
-                    + " ldap://localhost:10389 jduke theduke");
+            System.err.println("\tjava -cp ldap-server.jar " + AuthAndSearch.class.getName()
+                    + " ldap://localhost:10389 dio dio123");
             System.err.println();
             System.err.println("Exit codes:");
             System.err.println("\t0\tAuthentication succeeded");
@@ -36,7 +30,6 @@ public class AuthenticateWithSearch {
             System.exit(1);
         }
 
-        // Initial bind with Admin account - used to search User DN
         final Properties env = new Properties();
         env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");
         env.put(Context.SECURITY_AUTHENTICATION, "simple");
@@ -49,11 +42,10 @@ public class AuthenticateWithSearch {
             ctx = new InitialLdapContext(env, null);
             final SearchControls searchControls = new SearchControls();
             searchControls.setSearchScope(SearchControls.SUBTREE_SCOPE);
-            final String baseDN = "dc=jboss,dc=org";
+            final String baseDN = "dc=ggdio,dc=com,dc=br";
             NamingEnumeration<?> namingEnum = ctx.search(baseDN, "(uid={0})", new Object[] { args[1] }, searchControls);
             String userDN = null;
             if (namingEnum.hasMore()) {
-                // We found a user with given uid in the LDAP
                 SearchResult sr = (SearchResult) namingEnum.next();
                 if (sr.isRelative()) {
                     userDN = sr.getName() + "," + baseDN;
@@ -65,7 +57,6 @@ public class AuthenticateWithSearch {
             namingEnum.close();
             ctx.close();
             if (userDN != null) {
-                // try bind with user DN and user's password
                 env.put(Context.SECURITY_PRINCIPAL, userDN);
                 env.put(Context.SECURITY_CREDENTIALS, args[2]);
                 ctx = new InitialLdapContext(env, null);

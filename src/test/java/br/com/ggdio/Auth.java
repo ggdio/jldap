@@ -7,24 +7,18 @@ import javax.naming.NamingException;
 import javax.naming.ldap.InitialLdapContext;
 import javax.naming.ldap.LdapContext;
 
-public class Authenticate {
+public class Auth {
 
-    /**
-     * The main.
-     * 
-     * @param args
-     * @throws NamingException
-     */
     public static void main(String[] args) {
         if (args == null || args.length != 3) {
             System.err.println("Simple LDAP authenticator");
             System.err.println();
             System.err.println("Usage:");
-            System.err.println("\tjava " + Authenticate.class.getName() + " <ldapURL> <userDN> <password>");
+            System.err.println("\tjava " + Auth.class.getName() + " <ldapURL> <userDN> <password>");
             System.err.println();
             System.err.println("Example:");
             System.err.println(
-                    "\tjava -cp ldap-server.jar org.jboss.test.ldap.Authenticate ldap://localhost:10389 uid=jduke,ou=Users,dc=jboss,dc=org theduke");
+                    "\tjava -cp jldap.jar br.com.ggdio.Auth ldap://localhost:10389 uid=dio,ou=Users,dc=ggdio,dc=com,dc=br dio123");
             System.err.println();
             System.err.println("Exit codes:");
             System.err.println("\t0\tAuthentication succeeded");

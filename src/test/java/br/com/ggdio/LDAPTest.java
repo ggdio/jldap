@@ -17,13 +17,13 @@ public class LDAPTest {
         env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");
         env.put(Context.PROVIDER_URL, "ldap://127.0.0.1:10389");
         env.put(Context.SECURITY_AUTHENTICATION, "simple");
-        env.put(Context.SECURITY_PRINCIPAL, "uid=jduke,ou=Users,dc=jboss,dc=org");
-        env.put(Context.SECURITY_CREDENTIALS, "theduke");
+        env.put(Context.SECURITY_PRINCIPAL, "uid=dio,ou=Users,dc=ggdio,dc=com,dc=br");
+        env.put(Context.SECURITY_CREDENTIALS, "dio123");
         
         try {
             LdapContext ctx = new InitialLdapContext(env, null);
             ctx.setRequestControls(null);
-            NamingEnumeration<?> namingEnum = ctx.search("uid=jduke,ou=Users,dc=jboss,dc=org", "(objectclass=top)", getSimpleSearchControls());
+            NamingEnumeration<?> namingEnum = ctx.search("uid=dio,ou=Users,dc=ggdio,dc=com,dc=br", "(objectclass=top)", getSimpleSearchControls());
             while (namingEnum.hasMore ()) {
                 SearchResult result = (SearchResult) namingEnum.next ();    
                 Attributes attrs = result.getAttributes ();

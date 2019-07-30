@@ -23,17 +23,7 @@ import javax.net.ssl.X509ExtendedTrustManager;
 
 
 public class LdapTest {
-
-    // Public methods --------------------------------------------------------
-
-    /**
-     * The main.
-     * 
-     * @param args
-     * @throws NamingException
-     * @throws NoSuchAlgorithmException
-     * @throws KeyManagementException
-     */
+	
     public static void main(String[] args) throws NamingException, NoSuchAlgorithmException, KeyManagementException {
         String ldapUrl = "ldap://[::1]:10389";
 
