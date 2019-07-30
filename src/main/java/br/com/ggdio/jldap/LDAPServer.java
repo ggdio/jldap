@@ -46,14 +46,14 @@ public class LDAPServer {
         final ExtCommander jCmd = new ExtCommander(cliArguments, args);
         jCmd.setProgramName("java -jar ldap-server.jar");
         jCmd.setUsageHead(
-                "The ldap-server is a simple LDAP server implementation based on ApacheDS. It creates one user partition with root 'dc=jboss,dc=org'.");
+                "The ldap-server is a simple LDAP server implementation based on ApacheDS. It creates one user partition with root 'dc=ggdio,dc=com,dc=br'.");
         jCmd.setUsageTail("Examples:\n\n" //
                 + "$ java -jar ldap-server.jar users.ldif\n" //
                 + " Starts LDAP server on port 10389 (all interfaces) and imports users.ldif\n\n" //
                 + "$ java -jar ldap-server.jar -sp 10636 users.ldif\n" //
                 + " Starts LDAP server on port 10389 and LDAPs on port 10636 and imports the LDIF\n\n" //
                 + "$ java -jar ldap-server.jar -b 127.0.0.1 -p 389\n" //
-                + " Starts LDAP server on address 127.0.0.1:389 and imports default data (one user entry 'uid=jduke,ou=Users,dc=jboss,dc=org'");
+                + " Starts LDAP server on address 127.0.0.1:389 and imports default data (one user entry 'uid=dio,ou=Users,dc=ggdio,dc=com,dc=br'");
         if (cliArguments.isHelp()) {
             jCmd.usage();
             return;
